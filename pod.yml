@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hit-google
+  namespace: ddos-offer
+spec:
+  containers:
+  - name: artillery
+    image: maazghani/hit-google:1

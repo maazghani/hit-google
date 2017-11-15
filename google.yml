@@ -1,0 +1,22 @@
+config:
+  target: 'https://www.google.com'
+  phases:
+    - duration: 7200
+      arrivalRate: 2
+      name: "hit google"
+  plugins:
+    datadog:
+      # Custom hostname (leave blank if not desired) 
+      host: 'k8s-steel'
+      # Custom metric prefix (defaults to 'artillery.') 
+      prefix: 'artillery.hit-google.'
+      # Additional tags for all metrics 
+      tags:
+        - 'app:hit-google'
+        - 'environment:foo'
+scenarios:
+  - flow:
+      - get:
+          url: /about/our-company/
+
+
